@@ -21,7 +21,7 @@
                     <p class="text-xl md:text-2xl lg:text-3xl font-bold text-accent-400">20 лет опыта в ремонте ГДТ</p>
                 </div>
 
-                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl mx-auto">
+                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl lg:max-w-6xl mx-auto">
                     Первая специализированная компания в Беларуси • Более 15 000 восстановленных ГДТ • Оборудование TCRS США
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center">
@@ -84,7 +84,7 @@
             </div>
 
             <!-- Основной контент -->
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl lg:max-w-6xl mx-auto">
                 <div class="bg-white rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-8 lg:p-10 mb-8">
                     <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed">
                         Специализируемся на <strong class="text-primary-700">ремонте гидротрансформаторов АКПП</strong> для легковых автомобилей с 2005 года.

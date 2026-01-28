@@ -19,7 +19,7 @@
                     <p class="text-xl md:text-2xl lg:text-3xl font-bold text-accent-400">(гидротрансформатора)</p>
                 </div>
 
-                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl mx-auto">
+                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl lg:max-w-6xl mx-auto">
                     Полное восстановление • Балансировка на стенде TCRS (США) • Оригинальные запчасти • Гарантия до 2 лет
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center">
@@ -45,7 +45,7 @@
                 </h2>
                 <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl lg:max-w-6xl mx-auto">
                 <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed">
                     ЧТУП «Гидротрансформатор» — первая специализированная компания в Беларуси, занимающаяся исключительно <strong>ремонтом гидротрансформаторов (ГДТ) АКПП</strong>. За 20 лет работы мы восстановили более 15 000 гидротрансформаторов для автомобилей всех марок.
                 </p>

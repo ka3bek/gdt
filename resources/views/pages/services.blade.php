@@ -18,7 +18,7 @@
                     <p class="text-xl md:text-2xl lg:text-3xl font-bold text-accent-400">Гарантия качества • Оригинальные запчасти • Опыт 20 лет</p>
                 </div>
 
-                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl mx-auto">
+                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl lg:max-w-6xl mx-auto">
                     Современное оборудование TCRS (США) • Квалифицированные специалисты • Гарантия до 6 месяцев
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center">
@@ -324,7 +324,7 @@
                 <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl lg:max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                     <!-- Текст -->
                     <div>

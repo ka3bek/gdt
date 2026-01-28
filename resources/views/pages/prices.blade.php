@@ -18,7 +18,7 @@
                     <p class="text-xl md:text-2xl lg:text-3xl font-bold text-accent-400">Опыт 20 лет • Оборудование TCRS (США) • Оригинальные запчасти</p>
                 </div>
 
-                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl mx-auto">
+                <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl lg:max-w-6xl mx-auto">
                     Бесплатная диагностика • Четкие сроки работ • Гарантия на все виды ремонта
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center">
@@ -45,7 +45,7 @@
                 <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl lg:max-w-6xl mx-auto">
                 <div class="bg-white rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-8 lg:p-10 mb-8">
                     <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed">
                         Точную стоимость ремонта гидротрансформатора можно определить только после диагностики, так как каждый случай уникален.
@@ -222,7 +222,7 @@
                 <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl lg:max-w-6xl mx-auto">
                 <div class="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
                     <div class="md:flex">
                         <!-- Левая часть - гарантия -->
