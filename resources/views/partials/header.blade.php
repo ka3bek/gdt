@@ -28,9 +28,10 @@
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
     <div class="text-center space-y-8">
-        <a href="#about" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">О компании</a>
-        <a href="#services" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">Услуги</a>
-        <a href="#advantages" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">Преимущества</a>
+        <a href="/about" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">О компании</a>
+        <a href="/services" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">Услуги компании</a>
+        <a href="/prices" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">Цены и гарантии</a>
+        <a href="/contacts" class="block text-3xl font-bold hover:text-primary-600 transition" onclick="closeMobileMenu()">Контакты</a>
         <a href="tel:+375447348543" class="block text-3xl font-bold text-secondary-500">+375 (44) 734-85-43</a>
         <button onclick="openCallback(); closeMobileMenu();" class="block mx-auto bg-secondary-500 hover:bg-secondary-600 text-white text-xl px-8 py-3 rounded-full font-bold transition">Заказать звонок</button>
     </div>
