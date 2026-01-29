@@ -22,13 +22,37 @@
     <!-- Предзагрузка критичных ресурсов -->
     <link rel="preload" href="{{ asset('video/output.m3u8') }}" as="fetch" crossorigin>
 
+
+    <style>
+        /* Стили для мобильного меню */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        #mobile-menu:not(.hidden) {
+            pointer-events: auto;
+        }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 39;
+            backdrop-filter: blur(2px);
+        }
+    </style>
+
     <style>
         /* Критические стили */
         .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); }
         /*.glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); }*/
-        #callback-modal, #mobile-menu { display: none; }
-        #callback-modal.show, #mobile-menu.show { display: flex; }
-        #mobile-menu.show ~ .mobile-menu-overlay { display: block; }
+        #callback-modal { display: none; }
+        #callback-modal.show { display: flex; }
         .hyphenate { overflow-wrap: break-word; word-wrap: break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
         .phone-input.valid { border-color: #10b981; background-color: #f0fdf4; }
         .phone-input.invalid { border-color: #ef4444; background-color: #fef2f2; }
@@ -40,16 +64,8 @@
             .pulse-slow { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
-
-        /* Оверлей для мобильного меню */
-        .mobile-menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 49;
-            display: none;
-        }
     </style>
+
 
     @yield('styles')
 </head>
@@ -79,8 +95,6 @@
     <span class="sr-only">Заказать звонок</span>
 </button>
 
-<!-- Оверлей для мобильного меню -->
-<div class="mobile-menu-overlay" id="mobile-overlay" onclick="closeMobileMenu()"></div>
 
 <script>
     // CSRF токен для AJAX запросов
@@ -91,26 +105,6 @@
         isMobileMenuOpen: false,
         isCallbackModalOpen: false
     };
-
-    // Mobile menu
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileOverlay = document.getElementById('mobile-overlay');
-
-    function openMobileMenu() {
-        if (!mobileMenu || !mobileOverlay) return;
-        mobileMenu.classList.add('show');
-        mobileOverlay.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        AppState.isMobileMenuOpen = true;
-    }
-
-    function closeMobileMenu() {
-        if (!mobileMenu || !mobileOverlay) return;
-        mobileMenu.classList.remove('show');
-        mobileOverlay.style.display = 'none';
-        document.body.style.overflow = '';
-        AppState.isMobileMenuOpen = false;
-    }
 
     // Callback modal
     const callbackModal = document.getElementById('callback-modal');
@@ -225,7 +219,6 @@
         console.log('📱 Поле телефона инициализировано');
     }
 
-    // AJAX отправка формы
     // AJAX отправка формы
     function initFormHandler() {
         const form = document.getElementById('callback-form');
@@ -456,81 +449,10 @@
         console.log('✅ Обработчик формы инициализирован');
     }
 
-
-    // Тестовая функция для отладки
-    {{--function initTestButton() {--}}
-    {{--    // Добавляем кнопку для теста (только в development)--}}
-    {{--    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {--}}
-    {{--        const testBtn = document.createElement('button');--}}
-    {{--        testBtn.textContent = '🧪 Тест формы';--}}
-    {{--        testBtn.className = 'fixed bottom-32 right-6 bg-gray-800 text-white p-2 rounded text-xs z-50 shadow-lg';--}}
-    {{--        testBtn.onclick = async function() {--}}
-    {{--            const testData = {--}}
-    {{--                name: 'Тестовый пользователь',--}}
-    {{--                phone: '+375291234567',--}}
-    {{--                page: window.location.href,--}}
-    {{--                _token: window.csrfToken,--}}
-    {{--                antispam: ''--}}
-    {{--            };--}}
-
-    {{--            console.log('🧪 Тестовая отправка:', testData);--}}
-
-    {{--            try {--}}
-    {{--                const response = await fetch('{{ route("callback.submit") }}', {--}}
-    {{--                    method: 'POST',--}}
-    {{--                    headers: {--}}
-    {{--                        'X-Requested-With': 'XMLHttpRequest',--}}
-    {{--                        'Accept': 'application/json',--}}
-    {{--                        'Content-Type': 'application/json',--}}
-    {{--                        'X-CSRF-TOKEN': window.csrfToken--}}
-    {{--                    },--}}
-    {{--                    body: JSON.stringify(testData)--}}
-    {{--                });--}}
-
-    {{--                console.log('🧪 Статус:', response.status);--}}
-    {{--                const data = await response.json();--}}
-    {{--                console.log('🧪 Ответ:', data);--}}
-
-    {{--                showNotification('🧪 Тест: ' + (data.success ? '✅ Успешно!' : '❌ ' + data.message),--}}
-    {{--                    data.success ? 'success' : 'error');--}}
-    {{--            } catch (error) {--}}
-    {{--                console.error('🧪 Ошибка теста:', error);--}}
-    {{--                showNotification('🧪 Тест провален: ' + error.message, 'error');--}}
-    {{--            }--}}
-    {{--        };--}}
-    {{--        document.body.appendChild(testBtn);--}}
-
-    {{--        // Добавляем кнопку для ручного ввода--}}
-    {{--        const manualBtn = document.createElement('button');--}}
-    {{--        manualBtn.textContent = '📝 Ввод данных';--}}
-    {{--        manualBtn.className = 'fixed bottom-44 right-6 bg-blue-600 text-white p-2 rounded text-xs z-50 shadow-lg';--}}
-    {{--        manualBtn.onclick = function() {--}}
-    {{--            const name = prompt('Введите имя:', 'Тестовый пользователь');--}}
-    {{--            const phone = prompt('Введите телефон:', '+375291234567');--}}
-    {{--            if (name && phone) {--}}
-    {{--                const phoneInput = document.getElementById('phone-input');--}}
-    {{--                const nameInput = document.querySelector('input[name="name"]');--}}
-    {{--                if (phoneInput && nameInput) {--}}
-    {{--                    phoneInput.value = phone;--}}
-    {{--                    nameInput.value = name;--}}
-    {{--                    showNotification('✅ Данные введены в форму', 'success');--}}
-    {{--                }--}}
-    {{--            }--}}
-    {{--        };--}}
-    {{--        document.body.appendChild(manualBtn);--}}
-    {{--    }--}}
-    {{--}--}}
-
-
     // Обработчики событий
     document.addEventListener('DOMContentLoaded', function() {
         console.log('📄 DOM загружен, инициализация...');
         console.log('🔑 CSRF Token:', window.csrfToken ? 'есть' : 'отсутствует');
-
-        // Мобильное меню
-        document.getElementById('mobile-btn')?.addEventListener('click', openMobileMenu);
-        document.getElementById('mobile-close')?.addEventListener('click', closeMobileMenu);
-        mobileOverlay?.addEventListener('click', closeMobileMenu);
 
         // Callback modal
         callbackModal?.addEventListener('click', function(event) {
@@ -554,7 +476,6 @@
 
         // Инициализация обработчика формы
         initFormHandler();
-
 
         // Быстрый тест подключения
         setTimeout(() => {
@@ -590,7 +511,6 @@
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (AppState.isCallbackModalOpen) closeCallback();
-            if (AppState.isMobileMenuOpen) closeMobileMenu();
         }
     });
 
@@ -610,9 +530,6 @@
         }, 100);
     }, { passive: true });
 </script>
-
-@yield('scripts')
-
 
 <!-- Яндекс Метрика -->
 <script type="text/javascript" >

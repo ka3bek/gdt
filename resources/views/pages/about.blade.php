@@ -113,56 +113,31 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Процесс работы -->
-                <div class="mb-12">
-                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Как мы работаем?</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
-                        @foreach([
-                            ['num' => '1', 'title' => 'Диагностика', 'desc' => 'неисправностей'],
-                            ['num' => '2', 'title' => 'Разборка', 'desc' => 'и дефектовка'],
-                            ['num' => '3', 'title' => 'Замена', 'desc' => 'компонентов'],
-                            ['num' => '4', 'title' => 'Балансировка', 'desc' => 'на TCRS'],
-                            ['num' => '5', 'title' => 'Контроль', 'desc' => 'качества'],
-                        ] as $step)
-                            <div class="text-center group">
-                                <div class="bg-gradient-to-br from-primary-700 to-primary-800 text-white w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
-                                    <span class="text-2xl md:text-3xl font-bold">{{ $step['num'] }}</span>
-                                </div>
-                                <h4 class="font-bold text-gray-900">{{ $step['title'] }}</h4>
-                                <p class="text-sm text-gray-600">{{ $step['desc'] }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <!-- Оборудование -->
-                <div class="bg-gradient-to-br from-primary-700 to-primary-800 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Наше оборудование: {{ $companyInfo['equipment'] }}</h3>
-                    <p class="text-lg opacity-90 mb-6">Профессиональное стендовое оборудование TCRS производства США позволяет:</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Точно диагностировать неисправности гидротрансформатора</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Выполнять прецизионную балансировку с точностью до 0.1 г</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Тестировать ГДТ под нагрузкой, имитируя реальные условия</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Гарантировать качество восстановления на уровне нового изделия</span>
-                        </li>
-                    </ul>
-                    <p class="italic opacity-90">Мы участвуем в международных форумах по ремонту АКПП и постоянно совершенствуем технологии восстановления гидротрансформаторов. Работаем с клиентами из Беларуси, России и Литвы.</p>
-                </div>
             </div>
         </div>
     </section>
+
+    @include('partials.partners')
+
+    @include('partials.equipment')
+
+
+
+    <!-- Кнопка CTA -->
+    <div class="mt-16 md:mt-20 text-center">
+        <div class="inline-flex flex-col sm:flex-row gap-4 md:gap-6 items-center justify-center bg-gradient-to-r from-primary-600/10 to-secondary-500/10 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg">
+            <div class="text-left">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Готовы начать ремонт?</h3>
+                <p class="text-gray-600">Оставьте заявку и мы проведем бесплатную диагностику</p>
+            </div>
+            <button onclick="openCallback()"
+                    class="bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                Записаться на диагностику
+            </button>
+        </div>
+    </div>
+
+
 
     <!-- Секция сертификатов -->
     <section class="py-16 md:py-24 bg-white">

@@ -149,7 +149,7 @@
                 <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-4xl 2xl:max-w-6xl mx-auto">
                 <!-- Контейнер для карты -->
                 <div class="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
                     <!-- Ваша встроенная Яндекс Карта -->

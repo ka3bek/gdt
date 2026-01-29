@@ -35,6 +35,60 @@
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent pointer-events-none"></div>
     </section>
 
+{{--    <!-- Наши услуги -->--}}
+{{--    <section id="services" class="py-16 md:py-24 bg-white">--}}
+{{--        <div class="container mx-auto px-6">--}}
+{{--            <div class="text-center mb-12 md:mb-20">--}}
+{{--                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4">--}}
+{{--                    Наши услуги по ремонту гидротрансформаторов--}}
+{{--                </h2>--}}
+{{--                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Качественное восстановление ГДТ для всех типов автоматических коробок передач</p>--}}
+{{--                <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>--}}
+{{--            </div>--}}
+
+{{--            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">--}}
+{{--                @foreach($services as $service)--}}
+{{--                    <div class="group relative bg-gradient-to-br {{ $service['color'] }} text-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl md:shadow-2xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl md:hover:shadow-3xl">--}}
+{{--                        <div class="absolute inset-0 bg-white/10 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition"></div>--}}
+{{--                        <div class="relative z-10">--}}
+{{--                            <!-- Иконка услуги -->--}}
+{{--                            <div class="bg-white/20 w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 mx-auto">--}}
+{{--                                @if($service['icon'] === 'wrench')--}}
+{{--                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>--}}
+{{--                                @elseif($service['icon'] === 'scale')--}}
+{{--                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>--}}
+{{--                                @elseif($service['icon'] === 'search')--}}
+{{--                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>--}}
+{{--                                @elseif($service['icon'] === 'cog')--}}
+{{--                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>--}}
+{{--                                @elseif($service['icon'] === 'wrench-screwdriver')--}}
+{{--                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>--}}
+{{--                                @elseif($service['icon'] === 'lightning-bolt')--}}
+{{--                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+
+{{--                            <!-- Заголовок и описание -->--}}
+{{--                            <h3 class="text-lg md:text-xl lg:text-2xl font-black mb-4 text-center">{{ $service['title'] }}</h3>--}}
+{{--                            <p class="text-sm md:text-base opacity-90 mb-6 text-center">{{ $service['description'] }}</p>--}}
+
+{{--                            <!-- Цена -->--}}
+{{--                            <div class="text-center mb-6">--}}
+{{--                                <div class="text-2xl md:text-3xl font-bold mb-1">{{ $service['price'] }}</div>--}}
+{{--                                <p class="text-sm opacity-80">Средняя стоимость</p>--}}
+{{--                            </div>--}}
+
+{{--                            <!-- Кнопка -->--}}
+{{--                            <button onclick="openCallback()" class="w-full {{ $service['button_class'] }} text-white font-bold md:font-bold text-base md:text-lg py-3 md:py-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition">--}}
+{{--                                Узнать стоимость--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
     <!-- Наши услуги -->
     <section id="services" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
@@ -46,48 +100,256 @@
                 <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                @foreach($services as $service)
-                    <div class="group relative bg-gradient-to-br {{ $service['color'] }} text-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl md:shadow-2xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl md:hover:shadow-3xl">
-                        <div class="absolute inset-0 bg-white/10 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition"></div>
-                        <div class="relative z-10">
-                            <!-- Иконка услуги -->
-                            <div class="bg-white/20 w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                                @if($service['icon'] === 'wrench')
-                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                @elseif($service['icon'] === 'scale')
-                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-                                @elseif($service['icon'] === 'search')
-                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                                @elseif($service['icon'] === 'cog')
-                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                @elseif($service['icon'] === 'wrench-screwdriver')
-                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                @elseif($service['icon'] === 'lightning-bolt')
-                                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                @endif
-                            </div>
-
-                            <!-- Заголовок и описание -->
-                            <h3 class="text-lg md:text-xl lg:text-2xl font-black mb-4 text-center">{{ $service['title'] }}</h3>
-                            <p class="text-sm md:text-base opacity-90 mb-6 text-center">{{ $service['description'] }}</p>
-
-                            <!-- Цена -->
-                            <div class="text-center mb-6">
-                                <div class="text-2xl md:text-3xl font-bold mb-1">{{ $service['price'] }}</div>
-                                <p class="text-sm opacity-80">Средняя стоимость</p>
-                            </div>
-
-                            <!-- Кнопка -->
-                            <button onclick="openCallback()" class="w-full {{ $service['button_class'] }} text-white font-bold md:font-bold text-base md:text-lg py-3 md:py-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition">
-                                Узнать стоимость
-                            </button>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Услуга 1: Ремонт гидротрансформаторов АКПП -->
+                <div class="group relative bg-gradient-to-br from-primary-700 to-primary-800 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl md:shadow-2xl transform transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-6 hover:shadow-2xl md:hover:shadow-3xl">
+                    <!-- Анимация shimmer -->
+                    <div class="absolute inset-0 overflow-hidden rounded-2xl md:rounded-3xl">
+                        <div class="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shimmer_2s_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                @endforeach
+
+                    <!-- Overlay эффект при наведении -->
+                    <div class="absolute inset-0 bg-white/10 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div class="relative z-10">
+                        <!-- Иконка -->
+                        <div class="bg-white/20 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 lg:mb-8 mx-auto">
+                            <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+
+                        <!-- Заголовок -->
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-black mb-3 md:mb-4 lg:mb-6 hyphenate text-center">
+                            Ремонт гидротрансформаторов АКПП
+                        </h3>
+
+                        <!-- Краткое описание -->
+                        <div class="text-center mb-6 md:mb-8">
+                            <p class="text-lg md:text-xl font-bold mb-2">Полное восстановление ГДТ</p>
+                            <p class="text-sm md:text-base opacity-90">Качественный ремонт любой сложности</p>
+                        </div>
+
+                        <!-- Список работ -->
+                        <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-400 mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Замена фрикционов и сальников</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-400 mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Замена изношенных подшипников</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-400 mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Восстановление муфт блокировки</span>
+                            </li>
+                        </ul>
+
+                        <!-- Кнопка -->
+                        <button onclick="openCallback()" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold md:font-black text-base md:text-lg py-3 md:py-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition duration-300 group/btn">
+                            Узнать стоимость
+                            <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Услуга 2: Балансировка ГДТ -->
+                <div class="group relative bg-gradient-to-br from-secondary-500 to-secondary-600 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl md:shadow-2xl transform transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-6 hover:shadow-2xl md:hover:shadow-3xl">
+                    <!-- Анимация shimmer -->
+                    <div class="absolute inset-0 overflow-hidden rounded-2xl md:rounded-3xl">
+                        <div class="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shimmer_2s_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+
+                    <!-- Overlay эффект при наведении -->
+                    <div class="absolute inset-0 bg-white/10 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div class="relative z-10">
+                        <!-- Иконка -->
+                        <div class="bg-white/20 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 lg:mb-8 mx-auto">
+                            <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04"/>
+                            </svg>
+                        </div>
+
+                        <!-- Заголовок -->
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-black mb-3 md:mb-4 lg:mb-6 hyphenate text-center">
+                            Балансировка ГДТ
+                        </h3>
+
+                        <!-- Краткое описание -->
+                        <div class="text-center mb-6 md:mb-8">
+                            <p class="text-lg md:text-xl font-bold mb-2">Профессиональная балансировка</p>
+                            <p class="text-sm md:text-base opacity-90">На стенде TCRS (США)</p>
+                        </div>
+
+                        <!-- Список работ -->
+                        <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-white mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Профессиональное оборудование TCRS</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-white mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Устранение вибраций и шума</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-white mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Продление срока службы АКПП</span>
+                            </li>
+                        </ul>
+
+                        <!-- Кнопка -->
+                        <button onclick="openCallback()" class="w-full bg-white text-secondary-600 hover:bg-gray-100 font-bold md:font-black text-base md:text-lg py-3 md:py-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition duration-300 group/btn">
+                            Узнать стоимость
+                            <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Услуга 3: Диагностика гидротрансформатора -->
+                <div class="group relative bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl md:shadow-2xl transform transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-6 hover:shadow-2xl md:hover:shadow-3xl">
+                    <!-- Анимация shimmer -->
+                    <div class="absolute inset-0 overflow-hidden rounded-2xl md:rounded-3xl">
+                        <div class="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shimmer_2s_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+
+                    <!-- Overlay эффект при наведении -->
+                    <div class="absolute inset-0 bg-white/10 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div class="relative z-10">
+                        <!-- Иконка -->
+                        <div class="bg-white/20 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 lg:mb-8 mx-auto">
+                            <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+
+                        <!-- Заголовок -->
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-black mb-3 md:mb-4 lg:mb-6 hyphenate text-center">
+                            Диагностика гидротрансформатора
+                        </h3>
+
+                        <!-- Краткое описание -->
+                        <div class="text-center mb-6 md:mb-8">
+                            <p class="text-lg md:text-xl font-bold mb-2">Комплексная диагностика</p>
+                            <p class="text-sm md:text-base opacity-90">Точное определение неисправностей</p>
+                        </div>
+
+                        <!-- Список работ -->
+                        <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-400 mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Проверка герметичности</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-400 mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Износ деталей и давление масла</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-400 mr-2 md:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-sm md:text-base">Работа муфт блокировки</span>
+                            </li>
+                        </ul>
+
+                        <!-- Кнопка -->
+                        <button onclick="openCallback()" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold md:font-black text-base md:text-lg py-3 md:py-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition duration-300 group/btn">
+                            Записаться на диагностику
+                            <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <style>
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .hyphenate {
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+
+        /* Улучшенные эффекты для кнопок */
+        #services button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #services button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        #services button:hover::before {
+            left: 100%;
+        }
+
+        /* Анимация для иконок в списке */
+        #services li svg {
+            transition: transform 0.3s ease;
+        }
+
+        #services li:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Анимация для заголовков услуг */
+        #services h3 {
+            transition: transform 0.3s ease;
+        }
+
+        #services .group:hover h3 {
+            transform: scale(1.05);
+        }
+    </style>
+
+
+
+    @include('partials.video')
+
+
 
     <!-- Процесс ремонта -->
     <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
@@ -309,43 +571,8 @@
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
 
-
-    <!-- Видео -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-100 to-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4 hyphenate">
-                    Как мы ремонтируем гидротрансформаторы
-                </h2>
-                <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="max-w-4xl lg:max-w-6xl mx-auto rounded-xl md:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl md:shadow-2xl lg:shadow-3xl">
-                <video id="hero-video" class="w-full aspect-video"
-                       autoplay
-                       muted
-                       playsinline
-                       loop
-                       controls
-                       preload="auto"
-                       poster="{{ asset('video/preview.jpg') }}"
-                       aria-label="Видео процесса ремонта гидротрансформатора">
-                    <source src="{{ asset('video/output.m3u8') }}" type="application/x-mpegURL">
-                    <source src="{{ asset('video/output.mp4') }}" type="video/mp4">
-                    Ваш браузер не поддерживает воспроизведение видео.
-                    <a href="{{ asset('video/output.mp4') }}" class="text-accent-500 underline">Скачайте видео по ссылке</a>
-                    или посмотрите на нашем
-                    <a href="https://www.youtube.com/channel/..." class="text-accent-500 underline">YouTube канале</a>.
-                </video>
-            </div>
-            <div class="mt-8 md:mt-12 text-center max-w-3xl mx-auto">
-                <p class="text-lg md:text-xl text-gray-700">
-                    Процесс ремонта гидротрансформатора включает полную разборку, диагностику, замену изношенных деталей и точную балансировку на современном оборудовании.
-                </p>
             </div>
         </div>
     </section>
@@ -353,61 +580,7 @@
 
 
 
-    <!-- Оборудование -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4">
-                    Наше оборудование
-                </h2>
-                <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="max-w-4xl lg:max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <!-- Текст -->
-                    <div>
-                        <div class="bg-gradient-to-br from-primary-700 to-primary-800 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl">
-                            <h3 class="text-2xl md:text-3xl font-bold mb-4">Оборудование TCRS (США)</h3>
-                            <p class="text-lg opacity-90 mb-6">Профессиональное стендовое оборудование для точной диагностики и балансировки гидротрансформаторов.</p>
-
-                            <ul class="space-y-3 mb-6">
-                                <li class="flex items-start">
-                                    <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Прецизионная балансировка с точностью до 0.1 грамма</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Тестирование под нагрузкой (имитация реальных условий)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Диагностика герметичности и давления</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-6 h-6 text-accent-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Сертифицировано по международным стандартам</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Изображение оборудования -->
-                    <div class="relative">
-                        <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
-                            <img src="{{ asset('img/tcrs-equipment.jpg') }}"
-                                 alt="Оборудование TCRS для балансировки гидротрансформаторов"
-                                 class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 bg-secondary-500 text-white px-4 py-2 rounded-lg shadow-lg">
-                            <p class="text-sm font-bold">США</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('partials.equipment')
 
     <!-- CTA -->
     <section class="hero-bg text-white py-16 md:py-24 relative overflow-hidden">

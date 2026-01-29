@@ -690,12 +690,103 @@ class PageController extends Controller
     /**
      * Отправка в Telegram с картинкой и простым текстом
      */
+//    private function sendTelegramNotification(Callback $callback): void
+//    {
+//        $botToken = config('services.telegram.bot_token');
+//        $chatId = config('services.telegram.chat_id');
+//
+//        if (!$botToken || !$chatId) {
+//            return;
+//        }
+//
+//        $phone = trim($callback->phone ?? '');
+//
+//        $message = "Заявка #{$callback->id} на GDT\n"
+//            . "Имя: " . ($callback->name ?: 'Не указано') . "\n"
+//            . "Телефон: " . ($phone ?: 'Не указан') . "\n"
+//            . "IP: " . ($callback->ip_address ?: 'Неизвестно')
+//            . "Время: " . $callback->created_at->format('d.m.Y H:i:s') . "\n";
+//
+//
+//        if ($callback->page && $callback->page !== 'Прямой запрос') {
+//            $message .= "\nСтраница: " . parse_url($callback->page, PHP_URL_HOST);
+//        }
+//
+//        if ($callback->service) {
+//            $message .= "\nУслуга: " . $callback->service;
+//        }
+//
+//        if ($callback->message) {
+//            $message .= "\nСообщение: " . $callback->message;
+//        }
+//
+//        try {
+//            // Прямая отправка фото с текстом
+//            $url = "https://api.telegram.org/bot{$botToken}/sendPhoto";
+//            $imageUrl = "https://images.pexels.com/photos/16886249/pexels-photo-16886249.jpeg";
+//
+//            $data = [
+//                'chat_id' => $chatId,
+//                'photo' => $imageUrl,
+//                'caption' => $message
+//            ];
+//
+//            $ch = curl_init($url);
+//            curl_setopt_array($ch, [
+//                CURLOPT_POST => true,
+//                CURLOPT_RETURNTRANSFER => true,
+//                CURLOPT_TIMEOUT => 10,
+//                CURLOPT_POSTFIELDS => http_build_query($data)
+//            ]);
+//
+//            curl_exec($ch);
+//            curl_close($ch);
+//
+//        } catch (\Exception $e) {
+//            Log::error('Telegram error: ' . $e->getMessage());
+//
+//            // Резервный вариант - только текст
+//            try {
+//                $url = "https://api.telegram.org/bot{$botToken}/sendMessage";
+//                $data = [
+//                    'chat_id' => $chatId,
+//                    'text' => $message,
+//                    'disable_web_page_preview' => true
+//                ];
+//
+//                $ch = curl_init($url);
+//                curl_setopt_array($ch, [
+//                    CURLOPT_POST => true,
+//                    CURLOPT_RETURNTRANSFER => true,
+//                    CURLOPT_TIMEOUT => 10,
+//                    CURLOPT_POSTFIELDS => http_build_query($data)
+//                ]);
+//
+//                curl_exec($ch);
+//                curl_close($ch);
+//            } catch (\Exception $e2) {
+//                Log::error('Telegram fallback error: ' . $e2->getMessage());
+//            }
+//        }
+//    }
+
     private function sendTelegramNotification(Callback $callback): void
     {
         $botToken = config('services.telegram.bot_token');
         $chatId = config('services.telegram.chat_id');
 
+        // Логируем проверку настроек
+        Log::info('🔧 Проверка настроек Telegram', [
+            'bot_token_exists' => !empty($botToken),
+            'chat_id_exists' => !empty($chatId),
+            'callback_id' => $callback->id
+        ]);
+
         if (!$botToken || !$chatId) {
+            Log::error('❌ Не настроены параметры Telegram', [
+                'bot_token' => $botToken ? 'есть' : 'отсутствует',
+                'chat_id' => $chatId ? 'есть' : 'отсутствует'
+            ]);
             return;
         }
 
@@ -704,12 +795,15 @@ class PageController extends Controller
         $message = "Заявка #{$callback->id} на GDT\n"
             . "Имя: " . ($callback->name ?: 'Не указано') . "\n"
             . "Телефон: " . ($phone ?: 'Не указан') . "\n"
-//            . "IP: " . ($callback->ip_address ?: 'Неизвестно')
+            . "IP: " . ($callback->ip_address ?: 'Неизвестно') . "\n"
             . "Время: " . $callback->created_at->format('d.m.Y H:i:s') . "\n";
 
-
-        if ($callback->page && $callback->page !== 'Прямой запрос') {
-            $message .= "\nСтраница: " . parse_url($callback->page, PHP_URL_HOST);
+        // Исправленная проверка для страницы
+        if (!empty($callback->page) && $callback->page !== 'Прямой запрос') {
+            $host = parse_url($callback->page, PHP_URL_HOST);
+            $message .= "\nСтраница: " . ($host ?: $callback->page);
+        } else {
+            $message .= "\nСтраница: Прямой запрос";
         }
 
         if ($callback->service) {
@@ -721,6 +815,12 @@ class PageController extends Controller
         }
 
         try {
+            // Логируем начало отправки
+            Log::info('📤 Отправка в Telegram', [
+                'callback_id' => $callback->id,
+                'message_length' => strlen($message)
+            ]);
+
             // Прямая отправка фото с текстом
             $url = "https://api.telegram.org/bot{$botToken}/sendPhoto";
             $imageUrl = "https://images.pexels.com/photos/16886249/pexels-photo-16886249.jpeg";
@@ -728,7 +828,8 @@ class PageController extends Controller
             $data = [
                 'chat_id' => $chatId,
                 'photo' => $imageUrl,
-                'caption' => $message
+                'caption' => $message,
+                'parse_mode' => 'HTML' // Добавьте это для форматирования
             ];
 
             $ch = curl_init($url);
@@ -736,22 +837,48 @@ class PageController extends Controller
                 CURLOPT_POST => true,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 10,
-                CURLOPT_POSTFIELDS => http_build_query($data)
+                CURLOPT_POSTFIELDS => http_build_query($data),
+                CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/x-www-form-urlencoded'
+                ]
             ]);
 
-            curl_exec($ch);
+            $response = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $error = curl_error($ch);
+
             curl_close($ch);
 
+            // Логируем ответ от Telegram
+            Log::info('📨 Ответ Telegram', [
+                'callback_id' => $callback->id,
+                'http_code' => $httpCode,
+                'response' => $response,
+                'error' => $error ?: 'нет'
+            ]);
+
+            if ($error) {
+                throw new \Exception("CURL Error: " . $error);
+            }
+
         } catch (\Exception $e) {
-            Log::error('Telegram error: ' . $e->getMessage());
+            Log::error('❌ Telegram error', [
+                'callback_id' => $callback->id,
+                'error' => $e->getMessage()
+            ]);
 
             // Резервный вариант - только текст
             try {
+                Log::info('🔄 Попытка резервной отправки (текст)', [
+                    'callback_id' => $callback->id
+                ]);
+
                 $url = "https://api.telegram.org/bot{$botToken}/sendMessage";
                 $data = [
                     'chat_id' => $chatId,
                     'text' => $message,
-                    'disable_web_page_preview' => true
+                    'disable_web_page_preview' => true,
+                    'parse_mode' => 'HTML'
                 ];
 
                 $ch = curl_init($url);
@@ -762,12 +889,25 @@ class PageController extends Controller
                     CURLOPT_POSTFIELDS => http_build_query($data)
                 ]);
 
-                curl_exec($ch);
+                $response = curl_exec($ch);
+                $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
                 curl_close($ch);
+
+                Log::info('📨 Ответ Telegram (резервный)', [
+                    'callback_id' => $callback->id,
+                    'http_code' => $httpCode,
+                    'response' => $response
+                ]);
+
             } catch (\Exception $e2) {
-                Log::error('Telegram fallback error: ' . $e2->getMessage());
+                Log::error('❌ Telegram fallback error', [
+                    'callback_id' => $callback->id,
+                    'error' => $e2->getMessage()
+                ]);
             }
         }
     }
+
 
 }
