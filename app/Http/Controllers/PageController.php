@@ -690,85 +690,6 @@ class PageController extends Controller
     /**
      * Отправка в Telegram с картинкой и простым текстом
      */
-//    private function sendTelegramNotification(Callback $callback): void
-//    {
-//        $botToken = config('services.telegram.bot_token');
-//        $chatId = config('services.telegram.chat_id');
-//
-//        if (!$botToken || !$chatId) {
-//            return;
-//        }
-//
-//        $phone = trim($callback->phone ?? '');
-//
-//        $message = "Заявка #{$callback->id} на GDT\n"
-//            . "Имя: " . ($callback->name ?: 'Не указано') . "\n"
-//            . "Телефон: " . ($phone ?: 'Не указан') . "\n"
-//            . "IP: " . ($callback->ip_address ?: 'Неизвестно')
-//            . "Время: " . $callback->created_at->format('d.m.Y H:i:s') . "\n";
-//
-//
-//        if ($callback->page && $callback->page !== 'Прямой запрос') {
-//            $message .= "\nСтраница: " . parse_url($callback->page, PHP_URL_HOST);
-//        }
-//
-//        if ($callback->service) {
-//            $message .= "\nУслуга: " . $callback->service;
-//        }
-//
-//        if ($callback->message) {
-//            $message .= "\nСообщение: " . $callback->message;
-//        }
-//
-//        try {
-//            // Прямая отправка фото с текстом
-//            $url = "https://api.telegram.org/bot{$botToken}/sendPhoto";
-//            $imageUrl = "https://images.pexels.com/photos/16886249/pexels-photo-16886249.jpeg";
-//
-//            $data = [
-//                'chat_id' => $chatId,
-//                'photo' => $imageUrl,
-//                'caption' => $message
-//            ];
-//
-//            $ch = curl_init($url);
-//            curl_setopt_array($ch, [
-//                CURLOPT_POST => true,
-//                CURLOPT_RETURNTRANSFER => true,
-//                CURLOPT_TIMEOUT => 10,
-//                CURLOPT_POSTFIELDS => http_build_query($data)
-//            ]);
-//
-//            curl_exec($ch);
-//            curl_close($ch);
-//
-//        } catch (\Exception $e) {
-//            Log::error('Telegram error: ' . $e->getMessage());
-//
-//            // Резервный вариант - только текст
-//            try {
-//                $url = "https://api.telegram.org/bot{$botToken}/sendMessage";
-//                $data = [
-//                    'chat_id' => $chatId,
-//                    'text' => $message,
-//                    'disable_web_page_preview' => true
-//                ];
-//
-//                $ch = curl_init($url);
-//                curl_setopt_array($ch, [
-//                    CURLOPT_POST => true,
-//                    CURLOPT_RETURNTRANSFER => true,
-//                    CURLOPT_TIMEOUT => 10,
-//                    CURLOPT_POSTFIELDS => http_build_query($data)
-//                ]);
-//
-//                curl_exec($ch);
-//                curl_close($ch);
-//            } catch (\Exception $e2) {
-//                Log::error('Telegram fallback error: ' . $e2->getMessage());
-//            }
-//        }
-//    }
 
     private function sendTelegramNotification(Callback $callback): void
     {
@@ -907,6 +828,120 @@ class PageController extends Controller
                 ]);
             }
         }
+    }
+
+    /**
+     * Страница с видео-процессом ремонта
+     */
+    public function howWeRepair()
+    {
+        $currentYear = date('Y');
+
+        // Специфичные ключевые слова для этой страницы
+        $additionalKeywords = [
+            'процесс ремонта гидротрансформатора',
+            'как ремонтируют ГДТ',
+            'технология ремонта гидротрансформаторов',
+            'видео ремонта гидротрансформатора',
+            'ремонт бублика видео',
+            'процесс восстановления ГДТ',
+            'балансировка ГДТ видео',
+            'ремонт ГДТ своими глазами',
+            'станок для ремонта гидротрансформаторов',
+            'оборудование для балансировки ГДТ',
+            'ремонт гидротрансформатора по этапам',
+            'посмотреть ремонт ГДТ',
+        ];
+
+
+        $structuredData = $this->getCommonStructuredData('services');
+
+        // Добавляем специфичные структурированные данные для видео
+        $structuredData['video'] = [
+            '@type' => 'VideoObject',
+            'name' => 'Процесс ремонта гидротрансформатора',
+            'description' => 'Полный процесс ремонта и балансировки гидротрансформатора на профессиональном оборудовании',
+            'thumbnailUrl' => asset('img/video-thumbnail.jpg'), // Создайте превью для видео
+            'uploadDate' => date('Y-m-d'), // Дата публикации видео
+            'duration' => 'PT5M', // Длительность видео в формате ISO 8601
+            'contentUrl' => 'https://www.youtube.com/watch?v=ВАШ_ИДЕНТИФИКАТОР', // Ссылка на видео
+            'embedUrl' => 'https://www.youtube.com/embed/ВАШ_ИДЕНТИФИКАТОР', // Ссылка для встраивания
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => 'ЧТУП «Гидротрансформатор»',
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => asset('img/logo.png'),
+                ],
+            ],
+        ];
+
+        // Breadcrumbs для страницы
+        $structuredData['breadcrumb'] = [
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => [
+                [
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'name' => 'Главная',
+                    'item' => url('/'),
+                ],
+                [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Как мы ремонтируем',
+                    'item' => url('/kak-my-remontiruem-gidrotransformatory'),
+                ],
+            ],
+        ];
+
+        // Данные для отображения на странице
+        $videoData = [
+            'youtube_id' => 'ВАШ_ИДЕНТИФИКАТОР_ВИДЕО', // Или путь к локальному видео
+            'title' => 'Процесс ремонта гидротрансформатора на нашем производстве',
+            'duration' => '5:30',
+            'upload_date' => '15.12.2024',
+            'views' => '1247',
+            'description' => 'Полный цикл работ: от диагностики до балансировки на профессиональном оборудовании',
+        ];
+
+        // Ключевые этапы, которые показаны в видео
+        $processSteps = [
+            [
+                'number' => '01',
+                'title' => 'Диагностика и разборка',
+                'description' => 'Полная диагностика состояния, разборка гидротрансформатора, оценка износа деталей',
+                'icon' => 'magnify',
+                'color' => 'from-blue-500 to-blue-600',
+            ],
+            [
+                'number' => '02',
+                'title' => 'Замена изношенных деталей',
+                'description' => 'Замена фрикционов, сальников, подшипников, проверка состояния обгонной муфты',
+                'icon' => 'refresh',
+                'color' => 'from-green-500 to-green-600',
+            ],
+            [
+                'number' => '03',
+                'title' => 'Профессиональная балансировка',
+                'description' => 'Балансировка на стенде TCRS (США). Устранение вибраций до стандартов завода-изготовителя',
+                'icon' => 'scale',
+                'color' => 'from-purple-500 to-purple-600',
+            ],
+            [
+                'number' => '04',
+                'title' => 'Контроль качества и сборка',
+                'description' => 'Многоступенчатый контроль, герметичность, окончательная сборка и проверка',
+                'icon' => 'check',
+                'color' => 'from-orange-500 to-orange-600',
+            ],
+        ];
+
+        return view('pages.remont-gidrotransformatorov', compact(
+            'structuredData',
+            'videoData',
+            'processSteps'
+        ));
     }
 
 

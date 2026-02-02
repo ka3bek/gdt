@@ -15,6 +15,7 @@
 
     <!-- HLS.js с отложенной загрузкой -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js" defer></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -579,6 +580,8 @@
     setTimeout(checkYM, 500);
 </script>
 
+
+@include('partials.popup')
 
 </body>
 </html>

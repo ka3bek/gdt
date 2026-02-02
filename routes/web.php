@@ -9,6 +9,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/prices', [PageController::class, 'prices'])->name('prices');
 Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
+Route::get('/remont-gidrotransformatorov', [PageController::class, 'howWeRepair'])->name('howWeRepair');
 
 // Форма обратной связи
 Route::post('/callback', [PageController::class, 'callback'])->name('callback.submit');
