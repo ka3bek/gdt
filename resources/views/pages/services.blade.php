@@ -375,16 +375,9 @@
                         <!-- Шаги процесса -->
                         <div class="relative flex justify-between">
                             @foreach([
+
                                 [
                                     'number' => '1',
-                                    'title' => 'Диагностика',
-                                    'description' => 'Точное определение неисправностей с помощью профессионального оборудования TCRS',
-                                    'icon' => 'search',
-                                    'color' => 'from-primary-600 to-primary-700',
-                                    'accent' => 'secondary-500'
-                                ],
-                                [
-                                    'number' => '2',
                                     'title' => 'Разборка',
                                     'description' => 'Аккуратная разборка ГДТ с сохранением всех компонентов',
                                     'icon' => 'wrench-screwdriver',
@@ -392,9 +385,17 @@
                                     'accent' => 'primary-600'
                                 ],
                                 [
+                                    'number' => '2',
+                                    'title' => 'Диагностика',
+                                    'description' => 'Точное определение неисправностей с помощью профессионального оборудования',
+                                    'icon' => 'search',
+                                    'color' => 'from-primary-600 to-primary-700',
+                                    'accent' => 'secondary-500'
+                                ],
+                                [
                                     'number' => '3',
-                                    'title' => 'Замена деталей',
-                                    'description' => 'Установка оригинальных запчастей от проверенных поставщиков',
+                                    'title' => 'Сборка',
+                                    'description' => 'Установка оригинальных запчастей и сварка ГДТ на оборудовании TCRS',
                                     'icon' => 'package',
                                     'color' => 'from-primary-600 to-primary-700',
                                     'accent' => 'accent-500'
