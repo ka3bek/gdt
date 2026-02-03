@@ -368,15 +368,14 @@
                         <!-- Левая часть - гарантия -->
                         <div class="md:w-2/5 bg-gradient-to-br from-primary-700 to-primary-800 text-white p-6 md:p-8 lg:p-10">
                             <div class="text-center mb-6">
-                                <div class="text-5xl md:text-6xl lg:text-7xl font-bold mb-2">6</div>
-                                <div class="text-xl font-bold">месяцев</div>
-                                <p class="text-sm opacity-90 mt-2">срок гарантии</p>
+                                <div class="text-5xl md:text-6xl lg:text-7xl font-bold mb-2">до 2 лет</div>
+                                <div class="text-xl font-bold">гарантия</div>
+                                <p class="text-sm opacity-90 mt-2">на все виды работ</p>
                             </div>
                             <p class="text-center text-sm opacity-90">
-                                или согласно гарантии на ремонт АКПП
+                                на ремонт гидротрансформатора
                             </p>
                         </div>
-
                         <!-- Правая часть - что покрывает -->
                         <div class="md:w-3/5 p-6 md:p-8 lg:p-10">
                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Что покрывает гарантия?</h3>
