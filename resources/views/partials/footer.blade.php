@@ -6,6 +6,8 @@
                 <ul class="space-y-3 md:space-y-4 text-base md:text-lg">
                     <li><a href="/about" class="hover:text-accent-400 transition">О компании</a></li>
                     <li><a href="/services" class="hover:text-accent-400 transition">Услуги компании</a></li>
+                    <li><a href="/remont-gidrotransformatorov#hero-video" class="hover:text-accent-400 transition">Ремонт гидротрансформаторов</a></li>
+
                     <li><a href="/prices" class="hover:text-accent-400 transition">Цены и гарантии</a></li>
                     <li><a href="/contacts" class="hover:text-accent-400 transition">Контакты</a></li>
                 </ul>
