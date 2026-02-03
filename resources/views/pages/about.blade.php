@@ -22,7 +22,7 @@
                 </div>
 
                 <p class="text-base md:text-lg lg:text-xl mb-10 md:mb-12 opacity-90 max-w-4xl lg:max-w-6xl mx-auto">
-                    Первая специализированная компания в Беларуси • Более 15 000 восстановленных ГДТ • Оборудование TCRS США
+                    Первая специализированная компания в Беларуси • Более 20 000 восстановленных ГДТ • Оборудование TCRS США
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center">
                     <a href="tel:+375447348543" class="bg-secondary-500 hover:bg-secondary-600 text-white font-black text-base md:text-lg lg:text-xl px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-xl md:rounded-2xl shadow-2xl transform hover:scale-105 transition duration-300 flex items-center">

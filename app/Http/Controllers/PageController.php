@@ -68,7 +68,7 @@ class PageController extends Controller
             ],
             'contacts' => [
                 'title' => "Контакты — ремонт гидротрансформаторов АКПП в Минске | ЧТУП «Гидротрансформатор»",
-                'description' => "📍 Минск, ул. Котовского, 9а, ком. 12. 📞 Телефоны: +375 (44) 734-85-43, +375 (17) 273-76-20. 🕘 Пн–Пт 8:00–18:00. 🚗 Схема проезда. 📧 info@gidrotransformator.by",
+                'description' => "📍 Минск, ул. Котовского, 9а, ком. 12. 📞 Телефоны: +375 (44) 734-85-43, +375 (29) 683-06-88. 🕘 Пн–Пт 8:00–18:00. 🚗 Схема проезда. 📧 info@gidrotransformator.by",
                 'keywords' => $base['keywords_base'] . ', адрес мастерской Минск, телефон ремонта ГДТ, как доехать на ремонт гидротрансформатора',
                 'og_image' => asset('img/og-contacts.jpg'),
                 'h1' => 'Контакты мастерской по ремонту гидротрансформаторов',
@@ -379,7 +379,7 @@ class PageController extends Controller
             ],
             'phones' => [
                 ['number' => '+375 (44) 734-85-43', 'type' => 'мобильный (основной)', 'icon' => 'phone'],
-                ['number' => '+375 (17) 273-76-20', 'type' => 'городской', 'icon' => 'office'],
+                ['number' => '+375 (29) 683-06-88', 'type' => 'мобильный', 'icon' => 'office'],
                 ['number' => '+375 (29) 123-45-67', 'type' => 'Viber/WhatsApp', 'icon' => 'chat'],
             ],
             'email' => 'info@gidrotransformator.by',

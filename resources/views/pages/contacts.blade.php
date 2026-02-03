@@ -22,7 +22,7 @@
                     Работаем с 2005 года • Оборудование TCRS (США) • Оригинальные запчасти • Гарантия качества
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center">
-                    <a href="https://yandex.by/maps/org/gidrotransformator/193710186009" class="bg-secondary-500 hover:bg-secondary-600 text-white font-black text-base md:text-lg lg:text-xl px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-xl md:rounded-2xl shadow-2xl transform hover:scale-105 transition duration-300 flex items-center">
+                    <a href="https://yandex.by/maps/org/gidrotransformator/193710186009" target="_blank" class="bg-secondary-500 hover:bg-secondary-600 text-white font-black text-base md:text-lg lg:text-xl px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-xl md:rounded-2xl shadow-2xl transform hover:scale-105 transition duration-300 flex items-center">
                         <svg class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         Открыть карту
                     </a>
@@ -80,9 +80,9 @@
 
                             <div class="space-y-4 text-center">
                                 <div>
-                                    <a href="tel:+375172737620"
+                                    <a href="tel:+375296830688"
                                        class="text-xl md:text-2xl font-semibold tracking-tight hover:text-accent-400 transition-colors">
-                                        +375 (17) 273-76-20
+                                        +375 (29) 683-06-88
                                     </a>
                                     <p class="text-sm opacity-80 mt-1">городской</p>
                                 </div>
