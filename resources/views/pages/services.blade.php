@@ -350,18 +350,17 @@
     @include('partials.video')
 
 
-
     <!-- Процесс ремонта -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-20">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4">
                     Как выполняется ремонт гидротрансформатора?
                 </h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
                     Четкий технологический процесс от диагностики до балансировки на современном оборудовании
                 </p>
-                <div class="w-32 md:w-40 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 mx-auto rounded-full mt-6"></div>
+                <div class="w-24 md:w-32 h-1.5 bg-secondary-500 mx-auto rounded-full"></div>
             </div>
 
             <div class="max-w-6xl mx-auto">
@@ -370,70 +369,58 @@
                     <div class="relative">
                         <!-- Основная линия процесса -->
                         <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-1 bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 rounded-full opacity-30"></div>
-                        <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-1 bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 rounded-full opacity-70 animate-pulse-slow"></div>
 
                         <!-- Шаги процесса -->
                         <div class="relative flex justify-between">
                             @foreach([
-
                                 [
                                     'number' => '1',
-                                    'title' => 'Разборка',
-                                    'description' => 'Аккуратная разборка ГДТ с сохранением всех компонентов',
-                                    'icon' => 'wrench-screwdriver',
-                                    'color' => 'from-secondary-500 to-secondary-600',
-                                    'accent' => 'primary-600'
-                                ],
-                                [
-                                    'number' => '2',
                                     'title' => 'Диагностика',
                                     'description' => 'Точное определение неисправностей с помощью профессионального оборудования',
                                     'icon' => 'search',
-                                    'color' => 'from-primary-600 to-primary-700',
-                                    'accent' => 'secondary-500'
+                                    'color' => 'from-primary-600 to-primary-800'
+                                ],
+                                [
+                                    'number' => '2',
+                                    'title' => 'Разборка',
+                                    'description' => 'Аккуратная разборка ГДТ с сохранением всех компонентов',
+                                    'icon' => 'wrench-screwdriver',
+                                    'color' => 'from-secondary-500 to-secondary-600'
                                 ],
                                 [
                                     'number' => '3',
                                     'title' => 'Сборка',
                                     'description' => 'Установка оригинальных запчастей и сварка ГДТ на оборудовании TCRS',
                                     'icon' => 'package',
-                                    'color' => 'from-primary-600 to-primary-700',
-                                    'accent' => 'accent-500'
+                                    'color' => 'from-primary-600 to-primary-800'
                                 ],
                                 [
                                     'number' => '4',
                                     'title' => 'Балансировка',
                                     'description' => 'Точная балансировка на оборудовании TCRS (США)',
                                     'icon' => 'scale',
-                                    'color' => 'from-accent-500 to-accent-600',
-                                    'accent' => 'primary-600'
+                                    'color' => 'from-secondary-500 to-secondary-600'
                                 ]
                             ] as $step)
                                 <div class="flex flex-col items-center text-center w-56 relative group">
-                                    <!-- Верхняя часть с номером -->
+                                    <!-- Круг с номером -->
                                     <div class="mb-4 relative">
-                                        <!-- Анимированный фон -->
-                                        <div class="absolute inset-0 {{ $step['color'] }} rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-pulse"></div>
-
                                         <!-- Основной круг -->
-                                        <div class="relative bg-gradient-to-br {{ $step['color'] }} w-24 h-24 rounded-full flex items-center justify-center shadow-2xl group-hover:shadow-3xl transform group-hover:scale-110 transition-all duration-300">
-                                            <span class="text-4xl font-black text-white">{{ $step['number'] }}</span>
-
-                                            <!-- Внешнее кольцо -->
-                                            <div class="absolute -inset-4 border-4 border-{{ $step['accent'] }}/30 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
+                                        <div class="bg-gradient-to-br {{ $step['color'] }} w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full mx-auto mb-4 flex items-center justify-center shadow-xl md:shadow-2xl group-hover:scale-105 md:group-hover:scale-110 transition duration-300">
+                                            <span class="text-3xl md:text-4xl lg:text-5xl font-black text-white">{{ $step['number'] }}</span>
                                         </div>
 
                                         <!-- Иконка -->
-                                        <div class="absolute -bottom-2 -right-2 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-{{ $step['accent'] }} to-{{ $step['accent'] }}/80 flex items-center justify-center">
+                                        <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
                                                 @if($step['icon'] === 'search')
-                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                                                 @elseif($step['icon'] === 'wrench-screwdriver')
-                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                                 @elseif($step['icon'] === 'package')
-                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                                 @elseif($step['icon'] === 'scale')
-                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
                                                 @endif
                                             </div>
                                         </div>
@@ -441,25 +428,15 @@
 
                                     <!-- Контент -->
                                     <div class="mt-6 px-2">
-                                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
+                                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
                                             {{ $step['title'] }}
                                         </h3>
                                         <p class="text-gray-600 leading-relaxed text-sm md:text-base">
                                             {{ $step['description'] }}
                                         </p>
                                     </div>
-
-                                    <!-- Соединительная линия (справа) -->
-                                    @if(!$loop->last)
-                                        <div class="absolute top-12 right-0 w-full h-0.5 bg-gradient-to-r from-{{ $step['accent'] }}/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    @endif
                                 </div>
                             @endforeach
-                        </div>
-
-                        <!-- Анимированные элементы на линии -->
-                        <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2">
-                            <div class="h-2 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shimmer_2s_infinite]"></div>
                         </div>
                     </div>
                 </div>
@@ -473,110 +450,292 @@
                                 'title' => 'Диагностика',
                                 'description' => 'Точное определение неисправностей с помощью профессионального оборудования TCRS',
                                 'icon' => 'search',
-                                'color' => 'from-primary-600 to-primary-700',
-                                'accent' => 'secondary-500'
+                                'color' => 'from-primary-600 to-primary-800'
                             ],
                             [
                                 'number' => '2',
                                 'title' => 'Разборка',
                                 'description' => 'Аккуратная разборка ГДТ с сохранением всех компонентов',
                                 'icon' => 'wrench-screwdriver',
-                                'color' => 'from-secondary-500 to-secondary-600',
-                                'accent' => 'primary-600'
+                                'color' => 'from-secondary-500 to-secondary-600'
                             ],
                             [
                                 'number' => '3',
                                 'title' => 'Замена деталей',
                                 'description' => 'Установка оригинальных запчастей от проверенных поставщиков',
                                 'icon' => 'package',
-                                'color' => 'from-primary-600 to-primary-700',
-                                'accent' => 'accent-500'
+                                'color' => 'from-primary-600 to-primary-800'
                             ],
                             [
                                 'number' => '4',
                                 'title' => 'Балансировка',
                                 'description' => 'Точная балансировка на оборудовании TCRS (США)',
                                 'icon' => 'scale',
-                                'color' => 'from-accent-500 to-accent-600',
-                                'accent' => 'primary-600'
+                                'color' => 'from-secondary-500 to-secondary-600'
                             ]
                         ] as $step)
                             <div class="relative group">
                                 <!-- Линия слева -->
                                 @if(!$loop->first)
-                                    <div class="absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600/30 via-secondary-500/30 to-accent-500/30"></div>
+                                    <div class="absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600/20 via-secondary-500/20 to-primary-600/20"></div>
                                 @endif
 
                                 <div class="flex items-start">
-                                    <!-- Номер и иконка -->
+                                    <!-- Круг с номером и иконкой -->
                                     <div class="relative mr-6">
-                                        <div class="relative">
-                                            <!-- Анимированный фон -->
-                                            <div class="absolute inset-0 {{ $step['color'] }} rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br {{ $step['color'] }} w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 transition duration-300">
+                                            <span class="text-2xl md:text-3xl font-black text-white">{{ $step['number'] }}</span>
+                                        </div>
 
-                                            <!-- Основной круг -->
-                                            <div class="relative bg-gradient-to-br {{ $step['color'] }} w-20 h-20 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-300">
-                                                <span class="text-3xl font-black text-white">{{ $step['number'] }}</span>
-
-                                                <!-- Внешнее кольцо -->
-                                                <div class="absolute -inset-3 border-3 border-{{ $step['accent'] }}/30 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
-                                            </div>
-
-                                            <!-- Иконка -->
-                                            <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-{{ $step['accent'] }} to-{{ $step['accent'] }}/80 flex items-center justify-center">
-                                                    @if($step['icon'] === 'search')
-                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                                                    @elseif($step['icon'] === 'wrench-screwdriver')
-                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                                    @elseif($step['icon'] === 'package')
-                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                                    @elseif($step['icon'] === 'scale')
-                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-                                                    @endif
-                                                </div>
+                                        <!-- Иконка -->
+                                        <div class="absolute -bottom-1 -right-1 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
+                                            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
+                                                @if($step['icon'] === 'search')
+                                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                                @elseif($step['icon'] === 'wrench-screwdriver')
+                                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                                @elseif($step['icon'] === 'package')
+                                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                                @elseif($step['icon'] === 'scale')
+                                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Контент -->
                                     <div class="flex-1 pt-2">
-                                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
+                                        <h3 class="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
                                             {{ $step['title'] }}
                                         </h3>
-                                        <p class="text-gray-600 leading-relaxed">
+                                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
                                             {{ $step['description'] }}
                                         </p>
                                     </div>
                                 </div>
-
-                                <!-- Индикатор соединения -->
-                                @if(!$loop->last)
-                                    <div class="absolute left-12 top-20 bottom-0 w-0.5 bg-gradient-to-b from-{{ $step['accent'] }}/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                @endif
                             </div>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- Кнопка CTA -->
-                <div class="mt-16 md:mt-20 text-center">
-                    <div class="inline-flex flex-col sm:flex-row gap-4 md:gap-6 items-center justify-center bg-gradient-to-r from-primary-600/10 to-secondary-500/10 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg">
-                        <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Готовы начать ремонт?</h3>
-                            <p class="text-gray-600">Оставьте заявку и мы проведем бесплатную диагностику</p>
-                        </div>
-                        <button onclick="openCallback()"
-                                class="bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                            Записаться на диагностику
-                        </button>
-                    </div>
-                </div>
-
-
+                @include('partials.cta-small')
             </div>
         </div>
     </section>
+
+
+{{--    <!-- Процесс ремонта -->--}}
+{{--    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">--}}
+{{--        <div class="container mx-auto px-6">--}}
+{{--            <div class="text-center mb-12 md:mb-20">--}}
+{{--                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6">--}}
+{{--                    Как выполняется ремонт гидротрансформатора?--}}
+{{--                </h2>--}}
+{{--                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">--}}
+{{--                    Четкий технологический процесс от диагностики до балансировки на современном оборудовании--}}
+{{--                </p>--}}
+{{--                <div class="w-32 md:w-40 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 mx-auto rounded-full mt-6"></div>--}}
+{{--            </div>--}}
+
+{{--            <div class="max-w-6xl mx-auto">--}}
+{{--                <!-- Desktop версия -->--}}
+{{--                <div class="hidden lg:block">--}}
+{{--                    <div class="relative">--}}
+{{--                        <!-- Основная линия процесса -->--}}
+{{--                        <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-1 bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 rounded-full opacity-30"></div>--}}
+{{--                        <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-1 bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 rounded-full opacity-70 animate-pulse-slow"></div>--}}
+
+{{--                        <!-- Шаги процесса -->--}}
+{{--                        <div class="relative flex justify-between">--}}
+{{--                            @foreach([--}}
+
+{{--                                [--}}
+{{--                                    'number' => '1',--}}
+{{--                                    'title' => 'Разборка',--}}
+{{--                                    'description' => 'Аккуратная разборка ГДТ с сохранением всех компонентов',--}}
+{{--                                    'icon' => 'wrench-screwdriver',--}}
+{{--                                    'color' => 'from-secondary-500 to-secondary-600',--}}
+{{--                                    'accent' => 'primary-600'--}}
+{{--                                ],--}}
+{{--                                [--}}
+{{--                                    'number' => '2',--}}
+{{--                                    'title' => 'Диагностика',--}}
+{{--                                    'description' => 'Точное определение неисправностей с помощью профессионального оборудования',--}}
+{{--                                    'icon' => 'search',--}}
+{{--                                    'color' => 'from-primary-600 to-primary-700',--}}
+{{--                                    'accent' => 'secondary-500'--}}
+{{--                                ],--}}
+{{--                                [--}}
+{{--                                    'number' => '3',--}}
+{{--                                    'title' => 'Сборка',--}}
+{{--                                    'description' => 'Установка оригинальных запчастей и сварка ГДТ на оборудовании TCRS',--}}
+{{--                                    'icon' => 'package',--}}
+{{--                                    'color' => 'from-primary-600 to-primary-700',--}}
+{{--                                    'accent' => 'accent-500'--}}
+{{--                                ],--}}
+{{--                                [--}}
+{{--                                    'number' => '4',--}}
+{{--                                    'title' => 'Балансировка',--}}
+{{--                                    'description' => 'Точная балансировка на оборудовании TCRS (США)',--}}
+{{--                                    'icon' => 'scale',--}}
+{{--                                    'color' => 'from-accent-500 to-accent-600',--}}
+{{--                                    'accent' => 'primary-600'--}}
+{{--                                ]--}}
+{{--                            ] as $step)--}}
+{{--                                <div class="flex flex-col items-center text-center w-56 relative group">--}}
+{{--                                    <!-- Верхняя часть с номером -->--}}
+{{--                                    <div class="mb-4 relative">--}}
+{{--                                        <!-- Анимированный фон -->--}}
+{{--                                        <div class="absolute inset-0 {{ $step['color'] }} rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-pulse"></div>--}}
+
+{{--                                        <!-- Основной круг -->--}}
+{{--                                        <div class="relative bg-gradient-to-br {{ $step['color'] }} w-24 h-24 rounded-full flex items-center justify-center shadow-2xl group-hover:shadow-3xl transform group-hover:scale-110 transition-all duration-300">--}}
+{{--                                            <span class="text-4xl font-black text-white">{{ $step['number'] }}</span>--}}
+
+{{--                                            <!-- Внешнее кольцо -->--}}
+{{--                                            <div class="absolute -inset-4 border-4 border-{{ $step['accent'] }}/30 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>--}}
+{{--                                        </div>--}}
+
+{{--                                        <!-- Иконка -->--}}
+{{--                                        <div class="absolute -bottom-2 -right-2 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">--}}
+{{--                                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-{{ $step['accent'] }} to-{{ $step['accent'] }}/80 flex items-center justify-center">--}}
+{{--                                                @if($step['icon'] === 'search')--}}
+{{--                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>--}}
+{{--                                                @elseif($step['icon'] === 'wrench-screwdriver')--}}
+{{--                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>--}}
+{{--                                                @elseif($step['icon'] === 'package')--}}
+{{--                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>--}}
+{{--                                                @elseif($step['icon'] === 'scale')--}}
+{{--                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>--}}
+{{--                                                @endif--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+{{--                                    <!-- Контент -->--}}
+{{--                                    <div class="mt-6 px-2">--}}
+{{--                                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">--}}
+{{--                                            {{ $step['title'] }}--}}
+{{--                                        </h3>--}}
+{{--                                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">--}}
+{{--                                            {{ $step['description'] }}--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+
+{{--                                    <!-- Соединительная линия (справа) -->--}}
+{{--                                    @if(!$loop->last)--}}
+{{--                                        <div class="absolute top-12 right-0 w-full h-0.5 bg-gradient-to-r from-{{ $step['accent'] }}/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+
+{{--                        <!-- Анимированные элементы на линии -->--}}
+{{--                        <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2">--}}
+{{--                            <div class="h-2 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shimmer_2s_infinite]"></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+{{--                <!-- Mobile & Tablet версия -->--}}
+{{--                <div class="lg:hidden">--}}
+{{--                    <div class="space-y-12">--}}
+{{--                        @foreach([--}}
+{{--                            [--}}
+{{--                                'number' => '1',--}}
+{{--                                'title' => 'Диагностика',--}}
+{{--                                'description' => 'Точное определение неисправностей с помощью профессионального оборудования TCRS',--}}
+{{--                                'icon' => 'search',--}}
+{{--                                'color' => 'from-primary-600 to-primary-700',--}}
+{{--                                'accent' => 'secondary-500'--}}
+{{--                            ],--}}
+{{--                            [--}}
+{{--                                'number' => '2',--}}
+{{--                                'title' => 'Разборка',--}}
+{{--                                'description' => 'Аккуратная разборка ГДТ с сохранением всех компонентов',--}}
+{{--                                'icon' => 'wrench-screwdriver',--}}
+{{--                                'color' => 'from-secondary-500 to-secondary-600',--}}
+{{--                                'accent' => 'primary-600'--}}
+{{--                            ],--}}
+{{--                            [--}}
+{{--                                'number' => '3',--}}
+{{--                                'title' => 'Замена деталей',--}}
+{{--                                'description' => 'Установка оригинальных запчастей от проверенных поставщиков',--}}
+{{--                                'icon' => 'package',--}}
+{{--                                'color' => 'from-primary-600 to-primary-700',--}}
+{{--                                'accent' => 'accent-500'--}}
+{{--                            ],--}}
+{{--                            [--}}
+{{--                                'number' => '4',--}}
+{{--                                'title' => 'Балансировка',--}}
+{{--                                'description' => 'Точная балансировка на оборудовании TCRS (США)',--}}
+{{--                                'icon' => 'scale',--}}
+{{--                                'color' => 'from-accent-500 to-accent-600',--}}
+{{--                                'accent' => 'primary-600'--}}
+{{--                            ]--}}
+{{--                        ] as $step)--}}
+{{--                            <div class="relative group">--}}
+{{--                                <!-- Линия слева -->--}}
+{{--                                @if(!$loop->first)--}}
+{{--                                    <div class="absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600/30 via-secondary-500/30 to-accent-500/30"></div>--}}
+{{--                                @endif--}}
+
+{{--                                <div class="flex items-start">--}}
+{{--                                    <!-- Номер и иконка -->--}}
+{{--                                    <div class="relative mr-6">--}}
+{{--                                        <div class="relative">--}}
+{{--                                            <!-- Анимированный фон -->--}}
+{{--                                            <div class="absolute inset-0 {{ $step['color'] }} rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>--}}
+
+{{--                                            <!-- Основной круг -->--}}
+{{--                                            <div class="relative bg-gradient-to-br {{ $step['color'] }} w-20 h-20 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-300">--}}
+{{--                                                <span class="text-3xl font-black text-white">{{ $step['number'] }}</span>--}}
+
+{{--                                                <!-- Внешнее кольцо -->--}}
+{{--                                                <div class="absolute -inset-3 border-3 border-{{ $step['accent'] }}/30 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>--}}
+{{--                                            </div>--}}
+
+{{--                                            <!-- Иконка -->--}}
+{{--                                            <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">--}}
+{{--                                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-{{ $step['accent'] }} to-{{ $step['accent'] }}/80 flex items-center justify-center">--}}
+{{--                                                    @if($step['icon'] === 'search')--}}
+{{--                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>--}}
+{{--                                                    @elseif($step['icon'] === 'wrench-screwdriver')--}}
+{{--                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>--}}
+{{--                                                    @elseif($step['icon'] === 'package')--}}
+{{--                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>--}}
+{{--                                                    @elseif($step['icon'] === 'scale')--}}
+{{--                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>--}}
+{{--                                                    @endif--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+{{--                                    <!-- Контент -->--}}
+{{--                                    <div class="flex-1 pt-2">--}}
+{{--                                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">--}}
+{{--                                            {{ $step['title'] }}--}}
+{{--                                        </h3>--}}
+{{--                                        <p class="text-gray-600 leading-relaxed">--}}
+{{--                                            {{ $step['description'] }}--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                                <!-- Индикатор соединения -->--}}
+{{--                                @if(!$loop->last)--}}
+{{--                                    <div class="absolute left-12 top-20 bottom-0 w-0.5 bg-gradient-to-b from-{{ $step['accent'] }}/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 

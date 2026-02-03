@@ -185,8 +185,8 @@ class PageController extends Controller
 
         $companyInfo = [
             'years' => 20,
-            'repaired_count' => 15000,
-            'specialists' => 12,
+            'repaired_count' => 20000,
+            'specialists' => 5,
             'equipment' => 'TCRS (США)',
             'guarantee' => '2 года',
             'founding_year' => 2005,

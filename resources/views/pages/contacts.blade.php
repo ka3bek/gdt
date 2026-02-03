@@ -38,7 +38,7 @@
     <!-- Контактная информация -->
     <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-4xl 2xl:max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                     <!-- Адрес -->
                     <div class="group relative bg-gradient-to-br from-primary-700 to-primary-800 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl md:shadow-2xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:hover:shadow-3xl">
@@ -175,11 +175,11 @@
                                 <ul class="space-y-2 text-gray-600">
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span>Автобусы: 4, 14, 28, 40, 48, 53</span>
+                                        <span>Автобусы: 9, 9д, 16, 21, 22, 87С, 93, 112аС</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span>Троллейбусы: 2, 22, 33, 37</span>
+                                        <span>Троллейбусы: 3, 3п, 26, 34, 69</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -196,11 +196,11 @@
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span>Въезд со стороны ул. Котовского</span>
+                                        <span>Въезд со стороны ул. Орджоникидзе</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span>GPS координаты: 53.9023, 27.5619</span>
+                                        <span>GPS координаты: 53.8706, 27.6566</span>
                                     </li>
                                 </ul>
                             </div>
