@@ -344,45 +344,23 @@
                     <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Оборудование TCRS</h3>
                     <p class="text-gray-600 text-sm md:text-base">Профессиональные стенды из США для балансировки ГДТ</p>
                 </div>
+
                 <div class="text-center group">
                     <div class="bg-gradient-to-br from-secondary-500 to-secondary-600 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full mx-auto mb-4 md:mb-6 lg:mb-8 flex items-center justify-center shadow-xl md:shadow-2xl group-hover:scale-105 md:group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2 2 0 009.5 8h1a2 2 0 002 2v8"/></svg>
+                        <!-- Иконка шестеренки/детали -->
+                        <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Оригинальные запчасти</h3>
                     <p class="text-gray-600 text-sm md:text-base">Raybestos, Alto, Transtec для гидротрансформаторов</p>
                 </div>
+
+
             </div>
         </div>
-
-
-{{--        <div class="max-w-4xl 2xl:max-w-6xl mx-auto">--}}
-{{--            <!-- Только картинка -->--}}
-{{--            <div class="relative">--}}
-{{--                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl group">--}}
-{{--                    <!-- Контейнер для одной картинки -->--}}
-{{--                    <div id="single-image" class="relative w-full overflow-hidden">--}}
-{{--                        <!-- Одна картинка альбомного формата -->--}}
-{{--                        <img src="{{ asset('img/XXXL.webp') }}"--}}
-{{--                             class="w-full h-auto object-contain transition-opacity duration-1000 ease-in-out opacity-100"--}}
-{{--                             alt="Описание картинки">--}}
-
-{{--                        <!-- Градиент при наведении -->--}}
-{{--                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <!-- Декоративный элемент (опционально) -->--}}
-{{--                <div class="absolute -bottom-4 -right-4 bg-secondary-500 text-white px-4 py-2 rounded-lg shadow-lg">--}}
-{{--                    <p class="text-sm font-bold">Метка</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-
     </section>
 
-
-
-{{--   @include('partials.partners')--}}
-   @include('partials.cta')
+    @include('partials.cta')
 @endsection

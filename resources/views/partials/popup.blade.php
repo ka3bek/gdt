@@ -2,7 +2,7 @@
     const bannerConfig = {
         title: "Не верь на слово — смотри!",
         subtitle: "Полный ремонт гидротрансформатора от и до",
-        image: "/img/gdt.jpg",
+        image: "/img/gdt.webp",
         button: "/remont-gidrotransformatorov#hero-video"
     };
 </script>
@@ -100,12 +100,12 @@
             },
 
             wasClosed() {
-                return localStorage.getItem('tukan_banner_closed') === 'true';
+                return localStorage.getItem('gdt_banner_closed') === 'true';
             },
 
             close() {
                 this.show = false;
-                localStorage.setItem('tukan_banner_closed', 'true');
+                localStorage.setItem('gdt_banner_closed', 'true');
             },
 
             autoClose() {
@@ -114,7 +114,38 @@
 
             redirect() {
                 this.show = false;
-                localStorage.setItem('tukan_banner_closed', 'true');
+                localStorage.setItem('gdt_banner_closed', 'true');
+
+                // Отправка события в Яндекс.Метрику
+                if (typeof ym !== 'undefined') {
+                    ym(39907965, 'reachGoal', 'banner_video_click', {
+                        banner_title: this.config.title,
+                        button_url: this.config.button
+                    });
+                }
+
+                // Отправка события в Google Analytics 4
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'banner_click', {
+                        'event_category': 'banner',
+                        'event_label': 'video_banner',
+                        'banner_title': this.config.title,
+                        'button_text': 'Смотреть видео',
+                        'button_url': this.config.button,
+                        'value': 1
+                    });
+                }
+
+                // Отправка события в Universal Analytics (если используется)
+                if (typeof ga !== 'undefined') {
+                    ga('send', 'event', {
+                        eventCategory: 'banner',
+                        eventAction: 'click',
+                        eventLabel: 'video_banner',
+                        transport: 'beacon'
+                    });
+                }
+
                 window.location.href = this.config.button;
             }
         }));
