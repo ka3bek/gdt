@@ -14,7 +14,7 @@
                 </h1>
 
                 <div class="mb-8 md:mb-12">
-                    <p class="text-lg md:text-xl lg:text-2xl opacity-90 mb-2">Прозрачное ценообразование и гарантия 6 месяцев</p>
+                    <p class="text-lg md:text-xl lg:text-2xl opacity-90 mb-2">Прозрачное ценообразование и гарантия до 2 лет</p>
                     <p class="text-xl md:text-2xl lg:text-3xl font-bold text-accent-400">Опыт 20 лет • Оборудование TCRS (США) • Оригинальные запчасти</p>
                 </div>
 
