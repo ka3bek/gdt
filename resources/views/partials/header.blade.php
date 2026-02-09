@@ -2,7 +2,7 @@
     <div class="container mx-auto px-6 py-4">
         <nav class="flex items-center justify-between">
             <a href="/" class="flex items-center group">
-                <img src="{{ asset('favicon.svg') }}" alt="Ремонт гидротрансформатора АКПП Минск - ЧТУП Гидротрансформатор" class="h-14 md:h-18">
+                <img src="{{ asset('favicon.svg') }}" alt="Ремонт гидротрансформатора АКПП Минск - ЧТУП Гидротрансформатор" class="h-12 md:h-18">
                 <div class="ml-4 hidden md:block">
                     <div class="text-xl font-black text-gray-900 leading-tight">Гидротрансформатор</div>
                     <div class="text-sm text-gray-600">Ремонт гидротрансформаторов АКПП</div>
