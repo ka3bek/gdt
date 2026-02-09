@@ -3,9 +3,7 @@
 <head>
     @include('layouts.meta')
 
-    {{-- УДАЛИТЬ ЭТУ СТРОКУ: <script src="https://cdn.tailwindcss.com"></script> --}}
-
-    @vite(['resources/js/app.js'])
+{{--    @vite(['resources/js/app.js'])--}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" preload>
 
 
