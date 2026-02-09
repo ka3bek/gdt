@@ -5,7 +5,7 @@
     <section class="hero-bg text-white pt-32 pb-24 md:pt-40 md:pb-32 relative overflow-hidden">
         <!-- Фоновое изображение с альтернативным текстом -->
         <div class="absolute inset-0 opacity-20">
-            <img src="{{ asset('img/XXXL.webp') }}" alt="" class="w-full h-full object-cover object-center">
+            <img src="{{ asset('img/XXXL.webp') }}" alt="Фон ремонта гидротрансформатора АКПП" class="w-full h-full object-cover object-center">
         </div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-5xl mx-auto text-center">
