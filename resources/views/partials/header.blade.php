@@ -32,7 +32,7 @@
      aria-modal="true"
      aria-label="Мобильное меню">
     <button id="mobile-close" class="absolute top-8 right-8 text-gray-800 z-50" aria-label="Закрыть меню">
-        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
     </button>
