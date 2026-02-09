@@ -26,7 +26,7 @@
 
 <!-- Mobile Menu -->
 <div id="mobile-menu"
-     class="fixed inset-0 bg-white z-100 hidden"
+     class="fixed inset-0 bg-white z-40 hidden"
      aria-hidden="true"
      role="dialog"
      aria-modal="true"
