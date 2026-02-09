@@ -15,7 +15,7 @@
             <div>
                 <h3 class="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Адрес</h3>
                 <p class="text-base md:text-lg">220021, г. Минск,<br>ул. Котовского, д. 9а, ком. 12</p>
-                <p class="text-base md:text-lg mt-3 md:mt-4"><strong>Время работы:</strong><br>Пн-Пт: 8:00-18:00</p>
+                <p class="text-base md:text-lg mt-3 md:mt-4"><strong>Время работы:</strong><br>Пн-Пт: 9:00-18:00</p>
             </div>
             <div>
                 <h3 class="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Контакты</h3>

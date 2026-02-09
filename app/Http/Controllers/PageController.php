@@ -109,7 +109,7 @@ class PageController extends Controller
                 [
                     '@type' => 'OpeningHoursSpecification',
                     'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                    'opens' => '08:00',
+                    'opens' => '09:00',
                     'closes' => '18:00',
                 ],
             ],
@@ -384,7 +384,7 @@ class PageController extends Controller
             ],
             'email' => 'info@gidrotransformator.by',
             'work_hours' => [
-                ['days' => 'Понедельник – Пятница', 'hours' => '08:00 – 18:00', 'note' => 'прием заявок'],
+                ['days' => 'Понедельник – Пятница', 'hours' => '09:00 – 18:00', 'note' => 'прием заявок'],
                 ['days' => 'Суббота', 'hours' => '09:00 – 15:00', 'note' => 'по предварительной записи'],
                 ['days' => 'Воскресенье', 'hours' => 'выходной', 'note' => 'прием заявок онлайн'],
             ],
@@ -407,7 +407,7 @@ class PageController extends Controller
                 [
                     '@type' => 'OpeningHoursSpecification',
                     'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                    'opens' => '08:00',
+                    'opens' => '09:00',
                     'closes' => '18:00',
                 ],
                 [
