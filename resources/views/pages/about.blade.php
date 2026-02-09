@@ -121,7 +121,7 @@
 
     @include('partials.equipment')
 
-
+    @include('partials.reviews')
 
     <!-- Секция сертификатов -->
     <section class="py-16 md:py-24 bg-white">
