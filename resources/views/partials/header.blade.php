@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 right-0 z-30 bg-white/95 border-b border-gray-200 shadow-lg">
+<header class="fixed top-0 left-0 right-0 z-41 bg-white/95 border-b border-gray-200 shadow-lg">
     <div class="container mx-auto px-6 py-4">
         <nav class="flex items-center justify-between">
             <a href="/" class="flex items-center group">
