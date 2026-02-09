@@ -11,7 +11,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             <!-- Отзыв 1 -->
             <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div class="flex items-center mb-6">
@@ -108,18 +108,18 @@
                 Оставьте свой отзыв и помогите другим сделать правильный выбор
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://maps.app.goo.gl/example" target="_blank" class="bg-white hover:bg-gray-50 text-gray-800 font-bold py-3 px-8 rounded-xl border border-gray-300 hover:border-gray-400 transition duration-300 flex items-center justify-center">
+                <a href="https://yandex.by/maps/org/gidrotransformator/193710186009/reviews/?add-review=true&display-text=%D0%B3%D0%B8%D0%B4%D1%80%D0%BE%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D1%80&ll=27.812196%2C53.882329&mode=search&sll=27.415134%2C53.887612&sspn=0.114584%2C0.041578&tab=reviews&text=%D0%B3%D0%B8%D0%B4%D1%80%D0%BE%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D1%80&z=11" target="_blank" class="bg-white hover:bg-gray-50 text-gray-800 font-bold py-3 px-8 rounded-xl border border-gray-300 hover:border-gray-400 transition duration-300 flex items-center justify-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C7.589 0 4 3.589 4 8c0 4.245 7.273 15.307 7.583 15.775a1 1 0 0 0 1.834 0C13.727 23.307 21 12.245 21 8c0-4.411-3.589-8-8-8zm0 12c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"/>
                     </svg>
-                    Написать отзыв на Google Картах
+                    Написать отзыв на Яндекс Картах
                 </a>
-                <button onclick="openCallback()" class="bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-8 rounded-xl transition duration-300 flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-                    </svg>
-                    Оставить отзыв
-                </button>
+{{--                <button onclick="openCallback()" class="bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-8 rounded-xl transition duration-300 flex items-center justify-center">--}}
+{{--                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">--}}
+{{--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>--}}
+{{--                    </svg>--}}
+{{--                    Оставить отзыв--}}
+{{--                </button>--}}
             </div>
         </div>
     </div>
