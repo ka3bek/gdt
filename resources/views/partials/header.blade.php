@@ -15,23 +15,17 @@
                 <a href="/contacts" class="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-primary-600">Контакты</a>
                 <a href="tel:+375447348543" class="hidden xl:block bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-3 rounded-full font-bold shadow-lg transition-colors duration-200">+375 (44) 734-85-43</a>
             </div>
-            <button id="mobile-btn" class="lg:hidden text-gray-800" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="mobile-btn" class="lg:hidden text-gray-800 relative w-8 h-8" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                <!-- Бургер-иконка -->
+                <svg id="burger-icon" class="w-8 h-8 absolute inset-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <!-- Крестик (скрыт по умолчанию) -->
+                <svg id="close-icon" class="w-8 h-8 absolute inset-0 transition-opacity duration-200 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </button>
         </nav>
-
-        <!-- Кнопка закрытия мобильного меню (видна только когда меню открыто) -->
-        <button id="mobile-close-header"
-                class="hidden absolute top-full left-0 right-0 w-full bg-gray-800 text-white py-3 px-6 text-lg font-semibold flex items-center justify-center gap-2 z-40 lg:hidden"
-                onclick="closeMobileMenu()"
-                aria-label="Закрыть меню">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-            Закрыть меню
-        </button>
     </div>
 </header>
 
@@ -42,11 +36,6 @@
      role="dialog"
      aria-modal="true"
      aria-label="Мобильное меню">
-    <button id="mobile-close" class="absolute top-8 right-8 text-gray-800 z-50" aria-label="Закрыть меню">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-    </button>
     <div class="h-full flex items-center justify-center">
         <div class="text-center space-y-8 px-6">
             <a href="/about" class="block text-3xl font-bold hover:text-primary-600 transition-colors" onclick="closeMobileMenu()">О компании</a>
@@ -68,8 +57,8 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileOverlay = document.getElementById('mobile-overlay');
     const mobileBtn = document.getElementById('mobile-btn');
-    const mobileClose = document.getElementById('mobile-close');
-    const mobileCloseHeader = document.getElementById('mobile-close-header'); // Новая кнопка
+    const burgerIcon = document.getElementById('burger-icon');
+    const closeIcon = document.getElementById('close-icon');
 
     function openMobileMenu() {
         console.log('🟢 Открываем меню...');
@@ -81,13 +70,14 @@
         // Убираем hidden
         mobileMenu.classList.remove('hidden');
 
-        // Показываем кнопку закрытия в шапке
-        if (mobileCloseHeader) {
-            mobileCloseHeader.classList.remove('hidden');
-        }
-
         // Показываем оверлей
         mobileOverlay.style.display = 'block';
+
+        // Меняем иконки: скрываем бургер, показываем крестик
+        burgerIcon.classList.remove('opacity-100');
+        burgerIcon.classList.add('opacity-0');
+        closeIcon.classList.remove('opacity-0');
+        closeIcon.classList.add('opacity-100');
 
         // Обновляем состояние и доступность
         if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'true');
@@ -99,8 +89,8 @@
             window.AppState.isMobileMenuOpen = true;
         }
 
-        // Фокус на кнопке закрытия для доступности
-        if (mobileClose) mobileClose.focus();
+        // Меняем aria-label
+        mobileBtn.setAttribute('aria-label', 'Закрыть меню');
     }
 
     function closeMobileMenu() {
@@ -110,13 +100,14 @@
         // Скрываем меню
         mobileMenu.classList.add('hidden');
 
-        // Скрываем кнопку закрытия в шапке
-        if (mobileCloseHeader) {
-            mobileCloseHeader.classList.add('hidden');
-        }
-
         // Скрываем оверлей
         mobileOverlay.style.display = 'none';
+
+        // Меняем иконки: показываем бургер, скрываем крестик
+        burgerIcon.classList.remove('opacity-0');
+        burgerIcon.classList.add('opacity-100');
+        closeIcon.classList.remove('opacity-100');
+        closeIcon.classList.add('opacity-0');
 
         // Обновляем состояние и доступность
         if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
@@ -128,8 +119,8 @@
             window.AppState.isMobileMenuOpen = false;
         }
 
-        // Возвращаем фокус на кнопку открытия
-        if (mobileBtn) mobileBtn.focus();
+        // Меняем aria-label
+        mobileBtn.setAttribute('aria-label', 'Открыть меню');
     }
 
     // Инициализация при загрузке DOM
@@ -137,9 +128,16 @@
         console.log('🔄 Инициализация мобильного меню...');
 
         // Добавляем обработчики
-        document.getElementById('mobile-btn')?.addEventListener('click', openMobileMenu);
-        document.getElementById('mobile-close')?.addEventListener('click', closeMobileMenu);
-        mobileCloseHeader?.addEventListener('click', closeMobileMenu); // Обработчик для новой кнопки
+        document.getElementById('mobile-btn')?.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (mobileMenu.classList.contains('hidden')) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        // Закрытие при клике на оверлей
         mobileOverlay?.addEventListener('click', closeMobileMenu);
 
         // Проверка стилей оверлея
@@ -167,6 +165,11 @@
                 closeMobileMenu();
             }
         }
+    });
+
+    // Закрытие при клике на ссылку в меню
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
     });
 
     // Экспортируем функции в глобальную область видимости
