@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 border-b border-gray-200 shadow-lg">
+<header class="fixed top-0 left-0 right-0 z-30 bg-white/95 border-b border-gray-200 shadow-lg">
     <div class="container mx-auto px-6 py-4">
         <nav class="flex items-center justify-between">
             <a href="/" class="flex items-center group">
@@ -26,7 +26,7 @@
 
 <!-- Mobile Menu -->
 <div id="mobile-menu"
-     class="fixed inset-0 bg-white z-10 hidden"
+     class="fixed inset-0 bg-white z-40 hidden"
      aria-hidden="true"
      role="dialog"
      aria-modal="true"
