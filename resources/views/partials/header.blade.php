@@ -21,6 +21,17 @@
                 </svg>
             </button>
         </nav>
+
+        <!-- Кнопка закрытия мобильного меню (видна только когда меню открыто) -->
+        <button id="mobile-close-header"
+                class="hidden absolute top-full left-0 right-0 w-full bg-gray-800 text-white py-3 px-6 text-lg font-semibold flex items-center justify-center gap-2 z-40 lg:hidden"
+                onclick="closeMobileMenu()"
+                aria-label="Закрыть меню">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+            Закрыть меню
+        </button>
     </div>
 </header>
 
@@ -58,6 +69,7 @@
     const mobileOverlay = document.getElementById('mobile-overlay');
     const mobileBtn = document.getElementById('mobile-btn');
     const mobileClose = document.getElementById('mobile-close');
+    const mobileCloseHeader = document.getElementById('mobile-close-header'); // Новая кнопка
 
     function openMobileMenu() {
         console.log('🟢 Открываем меню...');
@@ -68,6 +80,11 @@
 
         // Убираем hidden
         mobileMenu.classList.remove('hidden');
+
+        // Показываем кнопку закрытия в шапке
+        if (mobileCloseHeader) {
+            mobileCloseHeader.classList.remove('hidden');
+        }
 
         // Показываем оверлей
         mobileOverlay.style.display = 'block';
@@ -93,6 +110,11 @@
         // Скрываем меню
         mobileMenu.classList.add('hidden');
 
+        // Скрываем кнопку закрытия в шапке
+        if (mobileCloseHeader) {
+            mobileCloseHeader.classList.add('hidden');
+        }
+
         // Скрываем оверлей
         mobileOverlay.style.display = 'none';
 
@@ -117,6 +139,7 @@
         // Добавляем обработчики
         document.getElementById('mobile-btn')?.addEventListener('click', openMobileMenu);
         document.getElementById('mobile-close')?.addEventListener('click', closeMobileMenu);
+        mobileCloseHeader?.addEventListener('click', closeMobileMenu); // Обработчик для новой кнопки
         mobileOverlay?.addEventListener('click', closeMobileMenu);
 
         // Проверка стилей оверлея
@@ -124,15 +147,15 @@
             if (!mobileOverlay.style.cssText) {
                 // Добавляем базовые стили если их нет
                 mobileOverlay.style.cssText = `
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.5);
-                z-index: 39;
-            `;
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 39;
+                `;
             }
         }
     });
