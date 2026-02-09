@@ -50,6 +50,8 @@
 
     @include('partials.video')
 
+    @include('partials.reviews')
+
     @include('partials.cta')
 @endsection
 
