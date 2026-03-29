@@ -18,11 +18,11 @@
                    aria-label="Видео процесса ремонта гидротрансформатора"
                    data-video-id="repair-process">
                 <source src="{{ asset('video/output.m3u8') }}" type="application/x-mpegURL">
-                <source src="{{ asset('video/output.mp4') }}" type="video/mp4">
-                Ваш браузер не поддерживает воспроизведение видео.
-                <a href="{{ asset('video/output.mp4') }}" class="text-accent-500 underline">Скачайте видео по ссылке</a>
-                или посмотрите на нашем
-                <a href="https://www.youtube.com/channel/..." class="text-accent-500 underline">YouTube канале</a>.
+{{--                <source src="{{ asset('video/output.mp4') }}" type="video/mp4">--}}
+{{--                Ваш браузер не поддерживает воспроизведение видео.--}}
+{{--                <a href="{{ asset('video/output.mp4') }}" class="text-accent-500 underline">Скачайте видео по ссылке</a>--}}
+{{--                или посмотрите на нашем--}}
+{{--                <a href="https://www.youtube.com/channel/..." class="text-accent-500 underline">YouTube канале</a>.--}}
             </video>
         </div>
         <div class="mt-8 md:mt-12 text-center max-w-3xl mx-auto">
