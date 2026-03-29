@@ -15,7 +15,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="yandex-verification" content="82fe499071356093" />
 
-
+    <meta name="ahrefs-site-verification" content="05f839dd5dff17b1a355b20b964d8f8e57134ebec25675019dd8a2411063b969">
 
     <!-- Google Fonts с оптимизацией -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
